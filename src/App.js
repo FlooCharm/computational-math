@@ -101,6 +101,7 @@ function App(props) {
 	}
 
 	const matrixAddition = () => {
+		console.log(aArr)
 		setResultMatrix(matrixInverseTransform(aArr.map((x, index) => x + bArr[index])))
 	}
 
@@ -109,7 +110,16 @@ function App(props) {
 	}
 
 	const matrixMultiplication = () => {
-		
+		let arr = Array(n*n).fill(0)
+		for(let i = 0; i < n*n; i++) {
+			let x = i % n;
+			for(let j = 0; j < n; j++) {
+				console.log('i', i, 'j', j, 'x', x)
+				arr[i] = arr[i] + parseInt(aArr[j]) * parseInt(bArr[x])
+				x+=parseInt(n);
+			}
+		}
+		setResultMatrix(matrixInverseTransform(arr))
 	}
 
 	const matrixTransform = (matrix) => {
@@ -146,9 +156,10 @@ function App(props) {
 			<div className='flex1'>
 				<h1>Operations</h1>
 				<div>
-					<button className='button smallMarginRight' onClick={() => {transformMatrixes();matrixAddition()}}>+</button>
-					<button className='button smallMarginRight' onClick={() => {transformMatrixes();matrixSubtraction()}}>-</button>
-					<button className='button' onClick={() => {transformMatrixes();matrixMultiplication()}}>*</button>
+					<button className='button smallMarginRight' onClick={() => transformMatrixes()}>Transform</button>
+					<button className='button smallMarginRight' onClick={() => matrixAddition()}>+</button>
+					<button className='button smallMarginRight' onClick={() => matrixSubtraction()}>-</button>
+					<button className='button' onClick={() => matrixMultiplication()}>*</button>
 				</div>
 				<div>
 					<p>Vector A: [{aArr.toString()}]</p>
