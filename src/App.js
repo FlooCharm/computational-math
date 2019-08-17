@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Gist from 'react-gist';
 import './App.css';
 
 function App(props) {
@@ -40,9 +41,9 @@ function App(props) {
 	}, [resultMatrix])
 
 	const setArray = () => {
-		let arr = Array(parseInt(n)).fill(0);
+		let arr = Array(n).fill(0);
 		for(let j = 0; j < n; j++)
-			arr[j] = Array(parseInt(n)).fill(0)
+			arr[j] = Array(n).fill(0)
 		return arr;
 	}
 
@@ -101,7 +102,6 @@ function App(props) {
 	}
 
 	const matrixAddition = () => {
-		console.log(aArr)
 		setResultMatrix(matrixInverseTransform(aArr.map((x, index) => x + bArr[index])))
 	}
 
@@ -113,10 +113,9 @@ function App(props) {
 		let arr = Array(n*n).fill(0)
 		for(let i = 0; i < n*n; i++) {
 			let x = i % n;
-			for(let j = 0; j < n; j++) {
-				console.log('i', i, 'j', j, 'x', x)
+			for(let j = Math.floor(i/n)*n; j < n + Math.floor(i/n)*n; j++) {
 				arr[i] = arr[i] + parseInt(aArr[j]) * parseInt(bArr[x])
-				x+=parseInt(n);
+				x+=n;
 			}
 		}
 		setResultMatrix(matrixInverseTransform(arr))
@@ -145,28 +144,43 @@ function App(props) {
 	return (
 		<div className='app row'>
 			<div className='flex1'>
-				<label>Enter value of n: </label>
-				<input type='number' placeholder='value' onChange={e => setN(e.target.value)} />
-				<button className='button' disabled={!n} onClick={() => setGrids()}>&#10003;</button>
-				<h2>Matrix A</h2>
-				{aMatrixGrid}
-				<h2>Matrix B</h2>
-				{bMatrixGrid}
+				<div>
+					<label>Enter value of n: </label>
+					<input type='number' placeholder='value' onChange={e => setN(parseInt(e.target.value))} />
+					<button className='button' disabled={!n} onClick={() => setGrids()}>&#10003;</button>
+					<div className='row'>
+						<div className='flex1'>
+							<h2>Matrix A</h2>
+							{aMatrixGrid}
+						</div>
+						<div className='flex1'>
+							<h2>Matrix B</h2>
+							{bMatrixGrid}
+						</div>
+					</div>
+				</div>
+				<div>
+					<h1>Operations</h1>
+					<div>
+						<button className='button smallMarginRight' onClick={() => transformMatrixes()}>Transform</button>
+						<button className='button smallMarginRight' onClick={() => matrixAddition()}>+</button>
+						<button className='button smallMarginRight' onClick={() => matrixSubtraction()}>-</button>
+						<button className='button' onClick={() => matrixMultiplication()}>*</button>
+					</div>
+					<div>
+						<p>Vector A: [{aArr.toString()}]</p>
+						<p>Vector B: [{bArr.toString()}]</p>
+						<h3>Matrix result</h3>
+						{resultMatrixGrid}
+					</div>
+				</div>
 			</div>
 			<div className='flex1'>
-				<h1>Operations</h1>
-				<div>
-					<button className='button smallMarginRight' onClick={() => transformMatrixes()}>Transform</button>
-					<button className='button smallMarginRight' onClick={() => matrixAddition()}>+</button>
-					<button className='button smallMarginRight' onClick={() => matrixSubtraction()}>-</button>
-					<button className='button' onClick={() => matrixMultiplication()}>*</button>
-				</div>
-				<div>
-					<p>Vector A: [{aArr.toString()}]</p>
-					<p>Vector B: [{bArr.toString()}]</p>
-					<h3>Matrix result</h3>
-					{resultMatrixGrid}
-				</div>
+				<h1>Code</h1>
+				<h6>Complete code on
+					<a href='https://github.com/FlooCharm/computational-math/blob/master/src/App.js' target="_blank"> https://github.com/FlooCharm/computational-math</a>
+				</h6>
+				<Gist id='4283de989e7eb33ce65094073f2988c7' />
 			</div>
 		</div>
 	);
