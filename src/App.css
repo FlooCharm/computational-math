@@ -5,13 +5,30 @@
   margin: 20px;
 }
 
+/* flex */
+
 .row {
   display: flex;
   flex-direction: row;
 }
 
-.flex1 {
-  flex: 1;
+.flex1 { flex: 1; }
+
+.alignItemsCenter { align-items: center; }
+
+/* margins */
+
+.smallMarginRight {
+  margin-right: 8px;
+}
+
+.noMargin{ margin: 0; }
+
+/* buttons */
+
+button { 
+  outline: none; 
+  font-family: 'Cabin';
 }
 
 .button {
@@ -24,9 +41,32 @@
   align-items: center;
 }
 
-.smallMarginRight {
-  margin-right: 8px;
+.link {
+  background: #3b7d9c;
+  padding: 10px;
+  margin-bottom: 10px;  
 }
+
+.link a {
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.backBtn {
+  flex-direction: row;
+  background: #3b7d9c;
+  border-radius: 10px;
+  padding: 0px 10px;
+  height: 100%;
+}
+
+.backBtn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* inputs */
 
 input {
   outline: none;
@@ -34,10 +74,6 @@ input {
   box-shadow: none;
   border: 1px solid #dbdbdb;
   padding: 5px;
-}
-
-button {
-  outline: none;
 }
 
 .matrixCell {
