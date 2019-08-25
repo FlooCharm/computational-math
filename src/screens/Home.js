@@ -9,7 +9,7 @@ function App(props) {
 				<Link to='/matrix'>Matrix Operations</Link>
 			</div>
 			<div className='link'>
-				<Link to='/words'>Word analizer</Link>
+				<Link to='/words'>Word analyzer</Link>
 			</div>
 			<div className='link'>
 				<Link to='/dfa'>DFAs</Link>

@@ -187,7 +187,7 @@ function Matrix(props) {
 					<div className='flex1'>
 						<h1>Code</h1>
 						<h6>Complete code on
-							<a href='https://github.com/FlooCharm/computational-math/blob/master/src/App.js' target="_blank"> https://github.com/FlooCharm/computational-math</a>
+							<a href='https://github.com/FlooCharm/computational-math/blob/master/src/screens/Matrix.js' target="_blank" rel="noopener noreferrer"> https://github.com/FlooCharm/computational-math</a>
 						</h6>
 						<Gist id='4283de989e7eb33ce65094073f2988c7' />
 					</div>

@@ -24,6 +24,10 @@
 
 .noMargin{ margin: 0; }
 
+.doubleMarginVertical {
+  margin: 32px 0px;
+}
+
 /* buttons */
 
 button { 
