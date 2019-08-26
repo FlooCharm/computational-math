@@ -5,15 +5,9 @@ import { Link } from "react-router-dom";
 function App(props) {
 	return (
 		<React.Fragment>
-			<div className='link'>
-				<Link to='/matrix'>Matrix Operations</Link>
-			</div>
-			<div className='link'>
-				<Link to='/words'>Word analyzer</Link>
-			</div>
-			<div className='link'>
-				<Link to='/dfa'>DFAs</Link>
-			</div>
+			<Link to='/matrix' className='link row'>Matrix Operations</Link>
+			<Link to='/words' className='link row'>Word analyzer</Link>
+			<Link to='/dfa' className='link row'>DFAs</Link>
 		</React.Fragment>
 	)
 }
