@@ -33,18 +33,18 @@ function DFA(props) {
 
 	const evaluateFirst = () => {
 		let str = word1.split('');
-		let i = 0;
-		str.forEach(l => {
-			i = dfa1[i][l]
-			setState1(i)
+		str.forEach((l, index) => {
+			setTimeout(function () {
+				setState1(prev => dfa1[prev][l])
+			}, 1000 * index)
 		})
 	}
 	const evaluateSecond = () => {
 		let str = word2.split('');
-		let i = 0;
-		str.forEach(l => {
-			i = dfa2[i][l]
-			setState2(i)
+		str.forEach((l, index) => {
+			setTimeout(function () {
+				setState2(prev => dfa2[prev][l])
+			}, 1000 * index)
 		})
 	}
 
