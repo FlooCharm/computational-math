@@ -21,8 +21,15 @@
 .smallMarginRight {
   margin-right: 8px;
 }
+.smallMarginTop {
+  margin-top: 8px;
+}
 
 .noMargin{ margin: 0; }
+
+.marginRight {
+  margin-right: 16px;
+}
 
 .doubleMarginVertical {
   margin: 32px 0px;
@@ -43,6 +50,11 @@ button {
   color: #3b7d9c;
   justify-content: center;
   align-items: center;
+}
+
+button:disabled {
+  background: #ebebeb;
+  color: #9b9b9b;
 }
 
 .link {
@@ -81,4 +93,19 @@ input {
   width: 35px;
   height: 35px;
   text-align: center;
+}
+
+.transitionCell {
+  width: 60px;
+  height: 35px;
+  text-align: center;
+}
+
+/* table */
+th, td {
+  width: 60px;
+  height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
 }
