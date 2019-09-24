@@ -9,6 +9,7 @@ function App(props) {
 			<Link to='/words' className='link row'>Word analyzer</Link>
 			<Link to='/dfa' className='link row'>DFAs</Link>
 			<Link to='/nfa2dfa' className='link row'>NFA to DFA</Link>
+			<Link to='/palindrome' className='link row'>Palindrome</Link>
 		</React.Fragment>
 	)
 }

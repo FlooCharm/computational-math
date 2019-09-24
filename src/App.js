@@ -6,6 +6,7 @@ import Matrix from './screens/Matrix.js';
 import Words from './screens/Words.js';
 import DFA from './screens/DFA.js';
 import NFAtoDFA from './screens/NFAtoDFA.js';
+import Palindrome from './screens/Palindrome.js';
 
 function App(props) {
 	return (
@@ -15,6 +16,7 @@ function App(props) {
 			<Route path='/words' exact component={Words}/>
 			<Route path='/dfa' exact component={DFA}/>
 			<Route path='/nfa2dfa' exact component={NFAtoDFA}/>
+			<Route path='/palindrome' exact component={Palindrome}/>
 		</Router>
 	)
 }
